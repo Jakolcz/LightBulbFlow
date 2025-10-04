@@ -1,7 +1,8 @@
 import asyncio
 import logging
 
-from src.common.logger_config import setup_logging
+from common.logger_config import setup_logging
+from scrapers.test import test_logging
 
 logger = logging.getLogger(__name__)
 
@@ -9,6 +10,7 @@ logger = logging.getLogger(__name__)
 async def main():
     setup_logging()
     logger.info("Starting LightBulbFlow application")
+    test_logging()
     pass
 
 
