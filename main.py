@@ -18,9 +18,9 @@ def parse_arguments():
     return parser.parse_args()
 
 
-async def main():
+async def main() -> None:
     setup_logging()
-    parse_arguments()
+    args = parse_arguments()
     logger.info("Starting LightBulbFlow application")
     pass
 
