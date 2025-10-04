@@ -67,5 +67,9 @@ data/
 *.zip
 *.tar.gz
 
+# IDE
 .idea
+
+# Project files
 credentials
+logs
