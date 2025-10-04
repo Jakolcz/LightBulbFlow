@@ -1,0 +1,3 @@
+scraper:
+  reddit:
+    credentials: credentials/reddit.json

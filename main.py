@@ -5,6 +5,7 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src"))
 
+from config import loader
 from common.logger_config import setup_logging
 
 logger = logging.getLogger(__name__)
@@ -22,6 +23,8 @@ async def main() -> None:
     setup_logging()
     args = parse_arguments()
     logger.info("Starting LightBulbFlow application")
+    config = loader.load_config(args.config)
+    logger.info(f"Configuration loaded from {args.config}: {config}")
     pass
 
 
