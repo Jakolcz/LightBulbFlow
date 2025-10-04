@@ -6,8 +6,10 @@ authors = [
     { name = "Jakub Koláček", email = "jakub@kolacek.dev" }
 ]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.13,<4.0"
 dependencies = [
+    "asyncio == 4.0.0",
+    "asyncpraw == 7.8.1",
 ]
 
 
