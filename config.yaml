@@ -1,3 +1,9 @@
 scraper:
   reddit:
     credentials: credentials/reddit.json
+    subreddits:
+      - indiehackers
+      - Startup_Ideas
+      - FullStack
+      - Entrepreneur
+      - OnlineIncomeHustle
