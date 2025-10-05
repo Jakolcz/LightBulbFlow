@@ -2,6 +2,9 @@ import asyncio
 import logging
 import os
 import sys
+from typing import List
+
+from scrapers.ScraperProtocol import ScraperProtocol
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "src"))
 
@@ -25,6 +28,19 @@ async def main() -> None:
     logger.info("Starting LightBulbFlow application")
     config = loader.load_config(args.config)
     logger.info(f"Configuration loaded from {args.config}: {config}")
+
+    if not config.scraper:
+        logger.error("No scraper configuration found. Exiting.")
+        return
+
+    scrapers: List[ScraperProtocol] = []
+    if config.scraper.reddit:
+        from scrapers.RedditScrapper import RedditScraper
+        scrapers.append(RedditScraper(config.scraper.reddit))
+
+    if not scrapers:
+        logger.error("No scrapers configured. Exiting.")
+        return
     pass
 
 
